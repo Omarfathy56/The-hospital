@@ -2,6 +2,8 @@ import main
 import streamlit as st
 import plotly.express as px
 
+
+# @st.cache_data
 data = main.load_data()
 
 st.sidebar.subheader("📞 Call Us ")
