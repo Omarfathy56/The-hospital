@@ -1,9 +1,13 @@
-import main
+import pandas as pd
 import streamlit as st
 import plotly.express as px
 
+def load_data():
+    df = pd.read_csv("clients_data.csv")
+    df.columns = ["Name", "BPM", "SpO2"]
+    return df
 
-data = main.load_data()
+data = load_data()
 
 st.sidebar.subheader("📞 Call Us ")
 st.sidebar.markdown("01050605580")
