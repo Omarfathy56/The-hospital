@@ -1,9 +1,6 @@
 import pandas as pd
 import streamlit as st
 
-if st.button('Reload Data'):
-    st.experimental_rerun()
-
 
 # @st.cache_data
 def load_data():
