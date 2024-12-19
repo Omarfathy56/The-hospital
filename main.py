@@ -1,13 +1,17 @@
 import pandas as pd
 import streamlit as st
 
+if st.button('Reload Data'):
+    st.experimental_rerun()
 
 
-@st.cache_data
+# @st.cache_data
 def load_data():
     df = pd.read_csv("clients_data.csv")
     df.columns = ["Name", "BPM", "SpO2"]
     return df
+
+
 data = load_data()
 
 st.sidebar.subheader("📞 Call Us ")
