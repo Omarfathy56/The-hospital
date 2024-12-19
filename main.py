@@ -2,12 +2,18 @@ import pandas as pd
 import streamlit as st
 
 
-# @st.cache_data
+@st.cache_data
 def load_data():
-    df = pd.read_csv("clients_data.csv")
-    df.columns = ["Name", "BPM", "SpO2"]
-    return df
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+        st.write(data)
+        df.columns = ["Name", "BPM", "SpO2"]
+        return df
+    else:
+        st.write("No file uploaded yet.")
+        return False
 
 data = load_data()
 
