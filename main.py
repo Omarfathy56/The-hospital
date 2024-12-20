@@ -5,7 +5,8 @@ import streamlit as st
 # @st.cache_data
 def load_data():
     df = pd.read_csv("clients_data.csv")
-    df.columns = ["Name", "BPM", "SpO2"]
+    df.columns = ["Name", "BPM", "SpO2", "Humidity", "Temp_C", "Temp_F"]
+
     return df
 
 
@@ -21,12 +22,23 @@ with st.container():
     with col1:
         st.image("LHO.webp", width=500)
     with col2:
-        st.markdown("<h1 style'text-align: right; color: red;'>Welcome to Local Health Organization</h1>",
+        st.markdown("<h1 style's-align: right; color: red;'>Welcome to Local Health Organization</h1>",
                     unsafe_allow_html=True)
 
 st.subheader("Welcome to LHO : ")
-st.markdown("we here help people to measure their heart rate state ,O2 and temperature in their body , \n we hope we "
-            "will be useful to all people and help them as far as possible ")
+st.markdown("""
+**Welcome to HealthSense – Your Partner in Wellness!**  
+At HealthSense, we aim to empower individuals to monitor and maintain their health effortlessly. Our app provides real-time insights into your body's vital metrics, including:
+
+- **Heart Rate (BPM):** Stay informed about your cardiovascular health.  
+- **Oxygen Saturation (SpO2):** Ensure your body is getting the oxygen it needs.  
+- **Body Temperature:** Track your body temperature in both °C and °F to detect potential health concerns early.  
+- **Environmental Humidity and Temperature:** Understand your surroundings and their impact on your well-being.  
+
+We are committed to making health monitoring accessible to everyone, helping you lead a healthier, more informed life. Together, let’s strive for a future where wellness is within everyone’s reach.  
+
+**Your health, simplified.**
+""")
 
 
 st.write("Clients Data:")
